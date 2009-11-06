@@ -31,10 +31,18 @@ public class Fann {
     protected Fann(){
     }
     
+    /**
+     * Load an existing FANN definition from a file
+     * @param file
+     */
     public Fann( String file ){
         ann = fann_create_from_file( file );
     }
     
+    /**
+     * Create a new ANN with the provided layers.
+     * @param layers
+     */
     public Fann( List<Layer> layers ){
         if( layers == null )
             throw new IllegalArgumentException( "layers == null" );
@@ -75,7 +83,7 @@ public class Fann {
     }
     
     /**
-     * Save this Fann to a file.
+     * Save this FANN to a file.
      * @param file
      * @return true on success
      */
@@ -85,17 +93,13 @@ public class Fann {
     }
     
     /**
+     * Run the ANN on a set of inputs.
      * 
      * @param input length == numInputNeurons
      * @return the output of the ANN. (length = numOutputNeurons)
-     * @throws IllegalArgumentException if input.length != numInputNeurons
      */
     public float[] run( float[] input ){
     
-        if( input.length != getNumInputNeurons() )
-            throw new IllegalArgumentException( 
-                    "input.length != " + getNumInputNeurons() );
-        
         Pointer result = fann_run( ann, input );
         float[] output = result.getFloatArray( 0, 1 );
         return output;

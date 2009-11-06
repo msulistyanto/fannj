@@ -4,6 +4,11 @@ import com.sun.jna.Native;
 import com.sun.jna.Platform;
 import com.sun.jna.Pointer;
 
+/**
+ * Trains an ANN.
+ * 
+ * @author krenfro
+ */
 public class Trainer {
 
     static{
