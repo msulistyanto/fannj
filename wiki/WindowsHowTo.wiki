@@ -1,0 +1,19 @@
+How to get FannJ working in Microsoft Windows.
+
+= Introduction =
+
+These instructions provide step-by-step instructions on how to get FannJ and the FANN library working in Windows.
+
+[FANN http://leenissen.dk/fann/] has pre-built Windows DLLs for FANN version 2.0.0.
+
+
+= Instructions =
+== Step 1 : Download the Windows DLLs ==
+
+  * Visit the Downloads section of the FANN website and download fann-win-dll-2.0.0.zip.  
+  * Unzip the file and locate _fann-2.0.0/Microsoft/WindowsDLL/bin/fannfixed.dll_.  
+  * Note: This file is also available as a download from the FannJ project site.  
+  * Copy _fannfixed.dll_ to _windows\system32\_
+
+TODO: what is the prefered method of installing a DLL in Windows?
+
