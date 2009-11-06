@@ -1,7 +1,5 @@
 package com.googlecode.fannj.jna;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import com.googlecode.fannj.jna.FannLibrary;

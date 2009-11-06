@@ -2,6 +2,13 @@ package com.googlecode.fannj;
 
 import java.util.List;
 
+/**
+ * <p>
+ * A standard backpropagation neural network, which is not fully connected.
+ * </p>
+ *  
+ * @author krenfro
+ */
 public class FannSparse extends Fann{
 
     public static final float DEFAULT_CONNECTION_RATE = 1f;

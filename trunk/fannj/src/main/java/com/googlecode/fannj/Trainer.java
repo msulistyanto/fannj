@@ -1,8 +1,14 @@
 package com.googlecode.fannj;
 
+import com.sun.jna.Native;
+import com.sun.jna.Platform;
 import com.sun.jna.Pointer;
 
 public class Trainer {
+
+    static{
+        Native.register( Platform.isWindows() ? "fann" : "fann" );
+    }
     
     Fann fann;
     
