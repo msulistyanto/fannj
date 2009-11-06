@@ -2,10 +2,20 @@ package com.googlecode.fannj;
 
 import java.util.ArrayList;
 
+/**
+ * A Layer of Neurons in an ANN.
+ * 
+ * @author krenfro
+ */
 public class Layer extends ArrayList<Neuron> {
 
     private static final long serialVersionUID = -6467294440860703773L;
     
+    /**
+     * Create a Layer with the specified number of neurons
+     * @param numNeurons
+     * @return
+     */
     public static Layer create( int numNeurons ){
         return create( 
                 numNeurons, 

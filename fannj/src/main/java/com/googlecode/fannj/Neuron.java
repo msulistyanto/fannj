@@ -1,5 +1,9 @@
 package com.googlecode.fannj;
 
+/**
+ * 
+ * @author krenfro
+ */
 public class Neuron {
 
     public static final ActivationFunction DEFAULT_ACTIVATION_FUNCTION = 
@@ -9,14 +13,29 @@ public class Neuron {
     ActivationFunction activationFunction;
     float steepness;
     
+    /**
+     * Create a neuron with default activation function: FANN_SIGMOID_STEPWISE
+     * and activation steepness = .5
+     */
     public Neuron(){
         this( DEFAULT_ACTIVATION_FUNCTION );
     }
     
+    /**
+     * Create a neuron with the specified activation function
+     * and default activation steepness = .5
+     * @param activationFunction
+     */
     public Neuron( ActivationFunction activationFunction ){
         this( DEFAULT_ACTIVATION_FUNCTION, DEFAULT_ACTIVATION_STEEPNESS );
     }
     
+    /**
+     * Create a neuron with the specified activation function and steepness.
+     * 
+     * @param activationFunction
+     * @param steepness
+     */
     public Neuron( ActivationFunction activationFunction, float steepness ){
         if( activationFunction == null )
             throw new IllegalArgumentException( "activationFunction is null" );

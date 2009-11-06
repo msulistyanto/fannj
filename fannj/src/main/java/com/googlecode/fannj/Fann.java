@@ -31,17 +31,9 @@ public class Fann {
     protected Fann(){
     }
     
-    /**
-     * Load a previously saved FANN neural network.
-     * 
-     * @param file The serialized FANN definition 
-     * @see http://leenissen.dk/fann/html/files/fann_io-h.html#fann_save
-     * @see http://leenissen.dk/fann/html/files/fann_io-h.html#fann_create_from_file
-     */
     public Fann( String file ){
         ann = fann_create_from_file( file );
     }
-        
     
     public Fann( List<Layer> layers ){
         if( layers == null )
@@ -83,6 +75,16 @@ public class Fann {
     }
     
     /**
+     * Save this Fann to a file.
+     * @param file
+     * @return true on success
+     */
+    public boolean save( String file ){
+        
+        return fann_save( ann, file ) == 0;
+    }
+    
+    /**
      * 
      * @param input length == numInputNeurons
      * @return the output of the ANN. (length = numOutputNeurons)
@@ -112,8 +114,7 @@ public class Fann {
     /* A JNA Direct Mapping implementation of the FANN library.  
      * This instance should be more performant than 
      * #com.googlecode.fannj.jna.FannLibrary
-     */
-    protected static native Pointer fann_create_from_file( String configuration_file );
+     */    
     protected static native Pointer fann_create_standard_array( int numLayers, int[] layers );
     protected static native Pointer fann_create_sparse_array( float connection_rate, int numLayers, int[] layers );
     protected static native Pointer fann_create_shortcut_array( int numLayers, int[] layers );
@@ -128,4 +129,7 @@ public class Fann {
     protected static native void fann_set_activation_steepness( 
             Pointer ann, float steepness, int layer, int neuron );
     protected static native Pointer fann_get_neuron( Pointer ann, int layer, int neuron);
+    protected static native Pointer fann_create_from_file( 
+            String configuration_file );
+    protected static native int fann_save( Pointer ann, String file );
 }
