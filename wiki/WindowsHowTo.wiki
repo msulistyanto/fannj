@@ -8,7 +8,7 @@ These instructions provide step-by-step instructions on how to get FannJ and the
 
 
 = Instructions =
-== Step 1 : Download the Windows DLLs ==
+== Step 1 : Install FANN Library ==
 
   * Visit the Downloads section of the FANN website and download fann-win-dll-2.0.0.zip.  
   * Unzip the file and locate _fann-2.0.0/Microsoft/WindowsDLL/bin/fannfixed.dll_.  
@@ -16,4 +16,12 @@ These instructions provide step-by-step instructions on how to get FannJ and the
   * Copy _fannfixed.dll_ to _windows\system32\_
 
 TODO: what is the prefered method of installing a DLL in Windows?
+
+
+== Step 2 : Install FANN GUI Tools ==
+
+== Step 3 : Build and Train your ANN ==
+
+== Step 4 : Configure Java Project ==
+
 
