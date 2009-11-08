@@ -1,5 +1,7 @@
 How to get FannJ working in Microsoft Windows.
 
+=Document Not Complete!=
+
 = Introduction =
 
 These instructions provide step-by-step instructions on how to get FannJ and the FANN library working in Windows.
@@ -23,5 +25,3 @@ TODO: what is the prefered method of installing a DLL in Windows?
 == Step 3 : Build and Train your ANN ==
 
 == Step 4 : Configure Java Project ==
-
-
