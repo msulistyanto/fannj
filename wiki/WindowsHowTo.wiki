@@ -1,4 +1,4 @@
-Instructions on how to get FannJ working in Microsoft Windows.
+#summary How to get FannJ working in Microsoft Windows.
 
 FANN (http://leenissen.dk/fann) has pre-built Windows DLLs for FANN version 2.0.0.
 However, FannJ was built and tested on 2.1.0beta.  If you want 2.1.0beta DLLs, you will have to build them.  See FANN documentation for help with this.  FannJ _should_ run on FANN version 2.0.0.  If you have problems please file an issue.
