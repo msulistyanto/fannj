@@ -1,4 +1,5 @@
 #summary How to get FannJ working in Linux.
+#labels Featured
 
 = Instructions =
 == Step 1 : Install FANN Library ==
