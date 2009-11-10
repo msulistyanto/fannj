@@ -1,13 +1,11 @@
 How to get FannJ working in Microsoft Windows.
 
-=Document Not Complete!=
-
 = Introduction =
 
 These instructions provide step-by-step instructions on how to get FannJ and the FANN library working in Windows.
 
 [FANN http://leenissen.dk/fann/] has pre-built Windows DLLs for FANN version 2.0.0.
-
+However, FannJ was built and tested on 2.1.0beta.  If you want 2.1.0beta DLLs, you will have to build them.  See FANN documentation for help with this.
 
 = Instructions =
 == Step 1 : Install FANN Library ==
@@ -19,12 +17,13 @@ These instructions provide step-by-step instructions on how to get FannJ and the
 
 TODO: what is the prefered method of installing a DLL in Windows?
 
+  * Alternatively, build and install the 2.1.0beta DLLs from the FANN source.
 
 == Step 2 : Install FANN GUI Tools ==
 
 I have had good luck with `FannTool` http://code.google.com/p/fanntool
 
-Download and Install per their instructions.
+Download and install using their instructions.
 
 == Step 3 : Create Train and Test your ANN ==
 
