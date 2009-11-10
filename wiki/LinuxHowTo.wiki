@@ -1,1 +1,20 @@
-#summary Linux How-To
+#summary How to get FannJ working in Linux.
+
+= Instructions =
+== Step 1 : Install FANN Library ==
+
+I recommend downloading and building FANN 2.1.0beta from the source provided at the FANN site (http://leenissen.dk/fann).  See the FANN documentation for help with building the source. FannJ _should_ also run on FANN version 2.0.0.  If you have problems please file an issue.
+
+== Step 2 : Install FANN GUI Tools ==
+
+I have had good luck with `FannTool` http://code.google.com/p/fanntool
+
+Download and install using their instructions.
+
+== Step 3 : Create Train and Test your ANN ==
+
+Use the `FannTool` to create, train, and test your ANN.  The training and test file formats are defined in the FANN documentation.  Save the ANN when you are happy with it.
+
+== Step 4 : Configure Java Project ==
+
+Using the latest version of the FannJ jar in your Java project, open the ANN file saved using `FannTool` and run it. 
