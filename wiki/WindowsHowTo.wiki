@@ -8,9 +8,9 @@ However, FannJ was built and tested on 2.1.0beta.  If you want 2.1.0beta DLLs, y
 == Step 1 : Install FANN Library ==
 
   * Visit the Downloads section of the FANN website and download fann-win-dll-2.0.0.zip.  
-  * Unzip the file and locate _fann-2.0.0/Microsoft/WindowsDLL/bin/fannfixed.dll_.  
+  * Unzip the file and locate _fann-2.0.0/Microsoft/WindowsDLL/bin/fannfloat.dll_.  
   * Note: This file is also available as a download from the FannJ project site.  
-  * Copy _fannfixed.dll_ to _windows\system32\_
+  * Copy _fannfloat.dll_ to _windows\system32\_
 
 TODO: what is the prefered method of installing a DLL in Windows?
 
