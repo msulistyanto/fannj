@@ -8,7 +8,7 @@ import com.sun.jna.Pointer;
 
 /**
  * <p>
- * A standard fully connected backpropagation neural network.
+ * A standard fully connected back-propagation neural network.
  * </p>
  * <p>
  * Not thread safe.
@@ -26,7 +26,7 @@ import com.sun.jna.Pointer;
 public class Fann {
 
     static {
-	Native.register(Platform.isWindows() ? "fann" : "fann");
+	Native.register(Platform.isWindows() ? "fannfloat" : "fann");
     }
 
     protected Pointer ann;
@@ -126,7 +126,7 @@ public class Fann {
      * should be more performant than #com.googlecode.fannj.jna.FannLibrary
      */
     protected static native Pointer fann_create_standard_array(int numLayers, int[] layers);
-
+                                    
     protected static native Pointer fann_create_sparse_array(float connection_rate, int numLayers,
 	    int[] layers);
 
