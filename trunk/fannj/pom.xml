@@ -9,6 +9,12 @@
     <description>Provides Java bindings to the Fast Artificial Neural Network Library (FANN).</description>
     <url>http://code.google.com/p/fannj</url>
     <inceptionYear>2009</inceptionYear>
+    <licenses>
+     <license>
+        <name>GNU LGPL v3</name>
+        <url>http://www.gnu.org/licenses/lgpl.txt</url>
+      </license>
+    </licenses>
     <developers>
         <developer>
             <id>krenfro</id>
