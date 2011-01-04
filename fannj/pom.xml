@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.googlecode.fannj</groupId>
     <artifactId>fannj</artifactId>
     <packaging>jar</packaging>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.3</version>
     <name>fannj</name>
     <description>Provides Java bindings to the Fast Artificial Neural Network Library (FANN).</description>
     <url>http://code.google.com/p/fannj</url>
@@ -24,9 +23,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:svn:http://fannj.googlecode.com/svn/trunk</connection>
-        <developerConnection>scm:svn:https://fannj.googlecode.com/svn/trunk</developerConnection>
-        <url>http://code.google.com/p/fannj/source/checkout</url>
+        <connection>scm:svn:http://fannj.googlecode.com/svn/tags/fannj-0.3</connection>
+        <developerConnection>scm:svn:https://fannj.googlecode.com/svn/tags/fannj-0.3</developerConnection>
+        <url>http://code.google.com/p/fannj/source/checkout/tags/fannj-0.3</url>
     </scm>
     <distributionManagement>
         <repository>
