@@ -138,6 +138,15 @@ public class Fann {
 	    fann_destroy(ann);
     }
 
+    /**
+     * Call {@link #close()} on garbage collection to catch memory leaks.
+     */
+    @Override
+    public void finalize() throws Throwable {
+        close();
+        super.finalize();
+    }
+
     /*
      * A JNA Direct Mapping implementation of the FANN library. This instance
      * should be more performant than #com.googlecode.fannj.jna.FannLibrary
