@@ -37,8 +37,8 @@ public class Layer extends ArrayList<Neuron> {
      * @return
      */
     public static Layer create(int numNeurons) {
-	return create(numNeurons, Neuron.DEFAULT_ACTIVATION_FUNCTION,
-	        Neuron.DEFAULT_ACTIVATION_STEEPNESS);
+        return create(numNeurons, Neuron.DEFAULT_ACTIVATION_FUNCTION,
+                      Neuron.DEFAULT_ACTIVATION_STEEPNESS);
     }
 
     /**
@@ -52,7 +52,7 @@ public class Layer extends ArrayList<Neuron> {
      */
     public static Layer create(int numNeurons, ActivationFunction activationFunction) {
 
-	return create(numNeurons, activationFunction, Neuron.DEFAULT_ACTIVATION_STEEPNESS);
+        return create(numNeurons, activationFunction, Neuron.DEFAULT_ACTIVATION_STEEPNESS);
     }
 
     /**
@@ -65,11 +65,11 @@ public class Layer extends ArrayList<Neuron> {
      * @return
      */
     public static Layer create(int numNeurons, ActivationFunction activationFunction,
-	    float steepness) {
+                               float steepness) {
 
-	Layer layer = new Layer();
-	for (int i = 0; i < numNeurons; i++)
-	    layer.add(new Neuron(activationFunction, steepness));
-	return layer;
+        Layer layer = new Layer();
+        for (int i = 0; i < numNeurons; i++)
+            layer.add(new Neuron(activationFunction, steepness));
+        return layer;
     }
 }
