@@ -25,7 +25,7 @@ import java.util.List;
  * which also has shortcut connections.
  * </p>
  * 
- * @author krenfro
+ * @author krenfro, brandstaetter
  */
 public class FannShortcut extends Fann {
 
@@ -44,5 +44,22 @@ public class FannShortcut extends Fann {
 
         ann = fann_create_shortcut_array(neurons.length, neurons);
         addLayers(layers);
+    }
+
+    /**
+     * Create a new ANN with just the input and output layers for Cascade
+     * Training
+     * 
+     * @param inputs
+     *            The number of input neurons
+     * @param outputs
+     *            The number of output neurons
+     */
+    public FannShortcut(int inputs, int outputs) {
+        int[] layers = new int[2];
+        layers[0] = inputs;
+        layers[1] = outputs;
+        int numLayers = 2;
+        ann = fann_create_shortcut_array(numLayers, layers);
     }
 }

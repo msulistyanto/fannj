@@ -35,7 +35,7 @@ import com.sun.jna.Pointer;
  * This class invokes native code. You must call close() to prevent memory
  * leakage.
  * </p>
- *
+ * 
  * @author krenfro
  * @see <a href="http://leenissen.dk/fann">Fast Artificial Neural Network</a>
  * @see <a href="https://jna.dev.java.net/#direct">JNA Direct Maping</a>
@@ -52,7 +52,7 @@ public class Fann {
 
     /**
      * Load an existing FANN definition from a file
-     *
+     * 
      * @param file
      */
     public Fann(String file) {
@@ -61,7 +61,7 @@ public class Fann {
 
     /**
      * Create a new ANN with the provided layers.
-     *
+     * 
      * @param layers
      */
     public Fann(List<Layer> layers) {
@@ -83,9 +83,10 @@ public class Fann {
         for (int x = 1; x < layers.size(); x++) {
             Layer layer = layers.get(x);
             for (int n = 0; n < layer.size(); n++) {
-                fann_set_activation_function(ann, layer.get(n).getActivationFunction().ordinal(),
-                                             x, n);
-                fann_set_activation_steepness(ann, layer.get(n).getSteepness(), x, n);
+                fann_set_activation_function(ann, layer.get(n)
+                        .getActivationFunction().ordinal(), x, n);
+                fann_set_activation_steepness(ann, layer.get(n).getSteepness(),
+                        x, n);
             }
         }
     }
@@ -104,7 +105,7 @@ public class Fann {
 
     /**
      * Save this FANN to a file.
-     *
+     * 
      * @param file
      * @return true on success
      */
@@ -115,7 +116,7 @@ public class Fann {
 
     /**
      * Run the ANN on a set of inputs.
-     *
+     * 
      * @param input
      *            length == numInputNeurons
      * @return the output of the ANN. (length = numOutputNeurons)
@@ -150,12 +151,14 @@ public class Fann {
      * A JNA Direct Mapping implementation of the FANN library. This instance
      * should be more performant than #com.googlecode.fannj.jna.FannLibrary
      */
-    protected static native Pointer fann_create_standard_array(int numLayers, int[] layers);
+    protected static native Pointer fann_create_standard_array(int numLayers,
+            int[] layers);
 
-    protected static native Pointer fann_create_sparse_array(float connection_rate, int numLayers,
-                                                             int[] layers);
+    protected static native Pointer fann_create_sparse_array(
+            float connection_rate, int numLayers, int[] layers);
 
-    protected static native Pointer fann_create_shortcut_array(int numLayers, int[] layers);
+    protected static native Pointer fann_create_shortcut_array(int numLayers,
+            int[] layers);
 
     protected static native float fann_get_MSE(Pointer ann);
 
@@ -169,15 +172,17 @@ public class Fann {
 
     protected static native int fann_get_total_neurons(Pointer ann);
 
-    protected static native void fann_set_activation_function(Pointer ann, int activation_function,
-                                                              int layer, int neuron);
+    protected static native void fann_set_activation_function(Pointer ann,
+            int activation_function, int layer, int neuron);
 
-    protected static native void fann_set_activation_steepness(Pointer ann, float steepness,
-                                                               int layer, int neuron);
+    protected static native void fann_set_activation_steepness(Pointer ann,
+            float steepness, int layer, int neuron);
 
-    protected static native Pointer fann_get_neuron(Pointer ann, int layer, int neuron);
+    protected static native Pointer fann_get_neuron(Pointer ann, int layer,
+            int neuron);
 
-    protected static native Pointer fann_create_from_file(String configuration_file);
+    protected static native Pointer fann_create_from_file(
+            String configuration_file);
 
     protected static native int fann_save(Pointer ann, String file);
 }
