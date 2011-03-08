@@ -28,7 +28,7 @@ import org.junit.Test;
 public class FannTrainerTest {
 
     @Test
-    public void testTraining() {
+    public void testTrainingDefault() {
 
         URL trainingFile = this.getClass().getResource("xor.data");
 
@@ -41,7 +41,65 @@ public class FannTrainerTest {
         Trainer trainer = new Trainer(fann);
 
         float desiredError = .001f;
-        float mse = trainer.train(trainingFile.getFile(), 500000, 1000, desiredError);
+        float mse = trainer.train(trainingFile.getFile(), 500000, 1000,
+                desiredError);
         assertTrue("" + mse, mse <= desiredError);
     }
+
+    @Test
+    public void testTrainingQuickprop() {
+
+        URL trainingFile = this.getClass().getResource("xor.data");
+
+        List<Layer> layers = new ArrayList<Layer>();
+        layers.add(Layer.create(2));
+        layers.add(Layer.create(3, ActivationFunction.FANN_SIGMOID_SYMMETRIC));
+        layers.add(Layer.create(1, ActivationFunction.FANN_SIGMOID_SYMMETRIC));
+
+        Fann fann = new Fann(layers);
+        Trainer trainer = new Trainer(fann);
+
+        trainer.setTrainingAlgorithm(TrainingAlgorithm.FANN_TRAIN_QUICKPROP);
+
+        float desiredError = .001f;
+        float mse = trainer.train(trainingFile.getFile(), 500000, 1000,
+                desiredError);
+        assertTrue("" + mse, mse <= desiredError);
+    }
+
+    @Test
+    public void testTrainingBackprop() {
+
+        URL trainingFile = this.getClass().getResource("xor.data");
+
+        List<Layer> layers = new ArrayList<Layer>();
+        layers.add(Layer.create(2));
+        layers.add(Layer.create(3, ActivationFunction.FANN_SIGMOID_SYMMETRIC));
+        layers.add(Layer.create(2, ActivationFunction.FANN_SIGMOID_SYMMETRIC));
+        layers.add(Layer.create(1, ActivationFunction.FANN_SIGMOID_SYMMETRIC));
+
+        Fann fann = new Fann(layers);
+        Trainer trainer = new Trainer(fann);
+
+        trainer.setTrainingAlgorithm(TrainingAlgorithm.FANN_TRAIN_INCREMENTAL);
+
+        float desiredError = .001f;
+        float mse = trainer.train(trainingFile.getFile(), 500000, 1000,
+                desiredError);
+        assertTrue("" + mse, mse <= desiredError);
+    }
+
+    @Test
+    public void testCascadeTraining() {
+        URL trainingFile = this.getClass().getResource("parity8.train");
+        Fann fann = new FannShortcut(8, 1);
+        Trainer trainer = new Trainer(fann);
+
+        float desiredError = .00f;
+        float mse = trainer.cascadeTrain(trainingFile.getFile(), 30, 1,
+                desiredError);
+
+        assertTrue("" + mse, mse <= desiredError);
+    }
+
 }

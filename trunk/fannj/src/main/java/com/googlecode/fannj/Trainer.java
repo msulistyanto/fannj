@@ -24,7 +24,7 @@ import com.sun.jna.Pointer;
 /**
  * Trains an ANN. Currently only File based training is supported.
  * 
- * @author krenfro, drt24
+ * @author krenfro, drt24, brandstaetter
  */
 public class Trainer {
 
@@ -38,21 +38,43 @@ public class Trainer {
     }
 
     /**
-     * @param trainingFile 
-     * @param maxEpochs 
-     * @param epochsBetweenReports 
-     * @param desiredError 
+     * @param trainingFile
+     * @param maxEpochs
+     * @param epochsBetweenReports
+     * @param desiredError
      * @return MSE for the ann once trained
      */
-    public float train(String trainingFile, int maxEpochs, int epochsBetweenReports,
-                       float desiredError) {
+    public float train(String trainingFile, int maxEpochs,
+            int epochsBetweenReports, float desiredError) {
 
-        fann_train_on_file(fann.ann, trainingFile, maxEpochs, epochsBetweenReports, desiredError);
+        fann_train_on_file(fann.ann, trainingFile, maxEpochs,
+                epochsBetweenReports, desiredError);
         return fann_get_MSE(fann.ann);
     }
 
     /**
-     *
+     * 
+     * @param dataFile
+     * @param maxNeurons
+     * @param neuronsBetweenReports
+     * @param desiredError
+     * @return MSE for the ann once trained
+     */
+    public float cascadeTrain(String dataFile, int maxNeurons,
+            int neuronsBetweenReports, float desiredError) {
+
+        setTrainingAlgorithm(TrainingAlgorithm.FANN_TRAIN_RPROP);
+        fann_cascadetrain_on_file(fann.ann, dataFile, maxNeurons,
+                neuronsBetweenReports, desiredError);
+        return fann_get_MSE(fann.ann);
+    }
+
+    public void setTrainingAlgorithm(TrainingAlgorithm algorithm) {
+        fann_set_training_algorithm(fann.ann, algorithm.ordinal());
+    }
+
+    /**
+     * 
      * @param testingFile
      * @return MSE for the Fann which has been tested
      */
@@ -68,19 +90,29 @@ public class Trainer {
     }
 
     /* A JNA Direct Mapping implementation of the FANN library. */
-    protected static native void fann_train_on_file(Pointer ann, String filename, int max_epochs,
-                                                    int epochs_between_reports, float desired_error);
+    protected static native void fann_train_on_file(Pointer ann,
+            String filename, int max_epochs, int epochs_between_reports,
+            float desired_error);
+
+    protected static native void fann_cascadetrain_on_file(Pointer ann,
+            String filename, int max_neurons, int neurons_between_reports,
+            float desired_error);
+
+    protected static native void fann_set_training_algorithm(Pointer ann,
+            int training_algorithm);
+
+    protected static native int fann_get_training_algorithm(Pointer ann);
 
     /**
      * Resets the mean square error from the network.
-     *
+     * 
      * @param ann
      */
     protected static native void fann_reset_MSE(Pointer ann);
 
     /**
      * Reads the mean square error from the network.
-     *
+     * 
      * @param ann
      * @return the mean square error of the network
      */
@@ -88,24 +120,24 @@ public class Trainer {
 
     /**
      * Test the network using data and return the MSE of the network.
-     *
+     * 
      * You might need to run {@link #fann_reset_MSE(Pointer)} first
-     *
+     * 
      * @param ann
      * @param data
-     *          the data to test with
+     *            the data to test with
      * @return the mean square error of the network
      */
     protected static native float fann_test_data(Pointer ann, Pointer data);
 
     /**
      * Read the training or testing data from a file
-     *
+     * 
      * You must call {@link #fann_destroy_train(Pointer)} on the {@link Pointer}
      * you get from this after you have finished with it
-     *
+     * 
      * @param filename
-     *          the file name of the file to read the data from
+     *            the file name of the file to read the data from
      * @return pointer to the data which has been read for use with
      *         {@link #fann_test_data(Pointer,Pointer)}
      */
@@ -113,9 +145,9 @@ public class Trainer {
 
     /**
      * Deallocate the data
-     *
+     * 
      * @param data
-     *          the training/testing data to deallocate
+     *            the training/testing data to deallocate
      */
     protected static native void fann_destroy_train(Pointer data);
 }
