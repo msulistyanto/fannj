@@ -42,7 +42,7 @@ public class Neuron {
      * @param activationFunction
      */
     public Neuron(ActivationFunction activationFunction) {
-        this(DEFAULT_ACTIVATION_FUNCTION, DEFAULT_ACTIVATION_STEEPNESS);
+        this(activationFunction, DEFAULT_ACTIVATION_STEEPNESS);
     }
 
     /**
