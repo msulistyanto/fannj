@@ -30,8 +30,8 @@ public class Layer extends ArrayList<Neuron> {
 
     /**
      * Create a Layer with the specified number of neurons with the default
-     * Activation Function: {@link Neuron.DEFAULT_ACTIVATION_FUNCTION} with
-     * steepness: {@link Neuron.DEFAULT_ACTIVATION_STEEPNESS}
+     * Activation Function: {@link Neuron#DEFAULT_ACTIVATION_FUNCTION} with
+     * steepness: {@link Neuron#DEFAULT_ACTIVATION_STEEPNESS}
      * 
      * @param numNeurons
      * @return
@@ -42,9 +42,9 @@ public class Layer extends ArrayList<Neuron> {
     }
 
     /**
-     * Create a Layer with the specified number of neruons and a particular
+     * Create a Layer with the specified number of neurons and a particular
      * ActivationFunction with the steepness:
-     * {@link Neuron.DEFAULT_ACTIVATION_STEEPNESS}
+     * {@link Neuron#DEFAULT_ACTIVATION_STEEPNESS}
      * 
      * @param numNeurons
      * @param activationFunction
@@ -56,7 +56,7 @@ public class Layer extends ArrayList<Neuron> {
     }
 
     /**
-     * Create a Layer with the specified number of neruons and a particular
+     * Create a Layer with the specified number of neurons and a particular
      * ActivationFunction with specified steepness
      * 
      * @param numNeurons
