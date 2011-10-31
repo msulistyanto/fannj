@@ -123,7 +123,7 @@ public class Fann {
      */
     public float[] run(float[] input) {
         Pointer result = fann_run(ann, input);
-        float[] output = result.getFloatArray(0, 1);
+        float[] output = result.getFloatArray(0, getNumOutputNeurons());
         return output;
     }
 
