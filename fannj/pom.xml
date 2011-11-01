@@ -23,9 +23,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:svn:http://fannj.googlecode.com/svn/tags/fannj-0.3</connection>
-        <developerConnection>scm:svn:https://fannj.googlecode.com/svn/tags/fannj-0.3</developerConnection>
-        <url>http://code.google.com/p/fannj/source/checkout/tags/fannj-0.3</url>
+        <connection>scm:svn:http://fannj.googlecode.com/svn/tags/fannj-0.4</connection>
+        <developerConnection>scm:svn:https://fannj.googlecode.com/svn/tags/fannj-0.4</developerConnection>
+        <url>http://code.google.com/p/fannj/source/checkout/tags/fannj-0.4</url>
     </scm>
     <distributionManagement>
         <repository>
