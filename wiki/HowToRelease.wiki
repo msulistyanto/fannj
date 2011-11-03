@@ -3,7 +3,6 @@ The build artifacts are hosted in the Sonatype OSS maven repository.  Releases a
 {{{mvn deploy}}}
 
 
-= Helpful Links =
 
 https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide
 
