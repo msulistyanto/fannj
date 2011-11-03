@@ -1,3 +1,4 @@
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.googlecode.fannj</groupId>
@@ -11,16 +12,16 @@
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
         <version>7</version>
-      </parent>
+    </parent>
   
     <url>http://code.google.com/p/fannj</url>
     <inceptionYear>2009</inceptionYear>
     <licenses>
-     <license>
-        <name>GNU LGPL v3</name>
-        <url>http://www.gnu.org/licenses/lgpl.txt</url>
-        <distribution>repo</distribution>
-      </license>
+        <license>
+            <name>GNU LGPL v3</name>
+            <url>http://www.gnu.org/licenses/lgpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
     </licenses>
     <developers>
         <developer>
@@ -64,16 +65,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <executions>
-                  <execution>
-                    <id>sign-artifacts</id>
-                    <phase>verify</phase>
-                    <goals>
-                      <goal>sign</goal>
-                    </goals>
-                    <configuration>
-                      <keyname>277117C3</keyname>
-                    </configuration>
-                  </execution>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <keyname>277117C3</keyname>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
