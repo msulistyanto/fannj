@@ -2,9 +2,9 @@ The build artifacts are hosted in the Sonatype OSS maven repository.  Releases a
 
 {{{mvn deploy}}}
 
-{{{mvn --activate-profiles sonatype-oss-release,-nexus,-sonar -Dusername=kylerenfro -Dpassword=xxxxxxxxx release:prepare}}}
+{{{mvn --activate-profiles sonatype-oss-release,-nexus,-sonar -Dusername=username -Dpassword=xxxxxxxxx release:prepare}}}
 
-{{{mvn --activate-profiles sonatype-oss-release,-nexus,-sonar -Dusername=kylerenfro -Dpassword=xxxxxxxxx release:perform}}}
+{{{mvn --activate-profiles sonatype-oss-release,-nexus,-sonar -Dusername=username -Dpassword=xxxxxxxxx release:perform}}}
 
 
 
