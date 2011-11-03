@@ -1,12 +1,17 @@
 The build artifacts are hosted in the Sonatype OSS maven repository.  Releases are mirrored to the Maven central repository.
 
+Some notes to myself on how to get this thing published:
+
+
 {{{mvn deploy}}}
 
-{{{mvn -Dusername=username@gmail.com -Dpassword=xxxxxxxxx release:prepare}}}
+{{{
+mvn release:prepare -Dusername=username@gmail.com -Dpassword=xxxxxxx -Darguments=-Dgpg.passphrase=xxxxxx
 
-{{{mvn -Dusername=username@gmail.com -Dpassword=xxxxxxxxx release:perform}}}
+mvn release:perform -Dusername=username@gmail.com -Dpassword=xxxxxxx -Darguments=-Dgpg.passphrase=xxxxxx
+}}}
 
-
+somewhat helpful links
 
 https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide
 
