@@ -2,6 +2,10 @@ The build artifacts are hosted in the Sonatype OSS maven repository.  Releases a
 
 {{{mvn deploy}}}
 
+{{{mvn -Dusername=kylerenfro -Dpassword=xxxxxxxxx release:prepare}}}
+
+{{{mvn -Dusername=kylerenfro -Dpassword=xxxxxxxxx release:perform}}}
+
 
 
 https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide
