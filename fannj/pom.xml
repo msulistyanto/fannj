@@ -7,7 +7,7 @@
     <version>0.5-SNAPSHOT</version>
     <name>fannj</name>
     <description>Provides Java bindings to the Fast Artificial Neural Network Library (FANN).</description>
-        
+       
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
