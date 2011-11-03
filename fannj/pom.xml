@@ -58,10 +58,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-scm-plugin</artifactId>
-                <version>1.0</version>
-                <configuration>
-                    <username>kylerenfro@gmail.com</username>
-                </configuration>
+                <version>1.5</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
