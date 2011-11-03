@@ -4,7 +4,7 @@
     <groupId>com.googlecode.fannj</groupId>
     <artifactId>fannj</artifactId>
     <packaging>jar</packaging>
-    <version>0.5-SNAPSHOT</version>
+    <version>0.5</version>
     <name>fannj</name>
     <description>Provides Java bindings to the Fast Artificial Neural Network Library (FANN).</description>
        
@@ -25,9 +25,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:svn:https://fannj.googlecode.com/svn</connection>
-        <developerConnection>scm:svn:https://fannj.googlecode.com/svn</developerConnection>
-        <url>https://fannj.googlecode.com/svn</url>
+        <connection>scm:svn:https://fannj.googlecode.com/svn/tags/fannj-0.5</connection>
+        <developerConnection>scm:svn:https://fannj.googlecode.com/svn/tags/fannj-0.5</developerConnection>
+        <url>https://fannj.googlecode.com/svn/tags/fannj-0.5</url>
     </scm>
     <distributionManagement>
         <repository>
