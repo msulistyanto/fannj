@@ -17,9 +17,13 @@
  */
 package com.googlecode.fannj;
 
+import com.sun.jna.Library;
 import com.sun.jna.Native;
+import com.sun.jna.NativeLibrary;
 import com.sun.jna.Platform;
 import com.sun.jna.Pointer;
+import com.sun.jna.win32.StdCallLibrary;
+import java.util.Map;
 
 /**
  * Trains an ANN. Currently only File based training is supported.
@@ -27,10 +31,21 @@ import com.sun.jna.Pointer;
  * @author krenfro, drt24, brandstaetter
  */
 public class Trainer {
-
+    
     static {
-        Native.register(Platform.isWindows() ? "fann" : "fann");
+        NativeLibrary fann;
+        if (Platform.isWindows()){
+            fann = NativeLibrary.getInstance("fannfloat");
+            Map options = fann.getOptions();
+            options.put(Library.OPTION_CALLING_CONVENTION,  StdCallLibrary.STDCALL_CONVENTION);
+            options.put(Library.OPTION_FUNCTION_MAPPER, new WindowsFunctionMapper());            
+        }
+        else{
+            fann = NativeLibrary.getInstance("fann");
+        }
+        Native.register(fann);
     }
+ 
     Fann fann;
 
     public Trainer(Fann fann) {
