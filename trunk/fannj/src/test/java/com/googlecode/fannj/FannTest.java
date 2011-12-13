@@ -17,6 +17,7 @@
  */
 package com.googlecode.fannj;
 
+import java.io.IOException;
 import static org.junit.Assert.*;
 
 import java.net.URL;
@@ -24,14 +25,21 @@ import java.net.URL;
 import org.junit.Test;
 
 import com.googlecode.fannj.Fann;
+import java.io.File;
+import java.io.FileOutputStream;
+import org.apache.commons.io.IOUtils;
 
 public class FannTest {
 
     @Test
-    public void testFromFile() {
+    public void testFromFile() throws IOException {
 
-        URL fannFile = this.getClass().getResource("xor_float.net");
-        Fann fann = new Fann(fannFile.getFile());
+        File temp = File.createTempFile("fannj_", ".tmp");
+        temp.deleteOnExit();
+        IOUtils.copy(this.getClass().getResourceAsStream("xor_float.net"), 
+                new FileOutputStream(temp));
+        
+        Fann fann = new Fann(temp.getPath());
         assertEquals(2, fann.getNumInputNeurons());
         assertEquals(1, fann.getNumOutputNeurons());
         assertEquals(-1f, fann.run(new float[]{-1, -1})[0], .2f);
