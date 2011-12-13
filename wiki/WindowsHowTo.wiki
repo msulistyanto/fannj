@@ -14,7 +14,7 @@ However, FannJ was built and tested on 2.1.0beta.  If you want 2.1.0beta DLLs, y
 
 TODO: what is the prefered method of installing a DLL in Windows?
 
-  * Alternatively, build and install the 2.1.0beta DLLs from the FANN source.
+  * Alternatively, build and install the 2.1.0beta DLLs from the FANN source.  Build the Windows DLL project. http://www.codeproject.com/KB/application/prjconverter.aspx will convert the vc++ 7 project to a vc++ 6 if needed.
 
 == Step 2 : Install FANN GUI Tools ==
 
