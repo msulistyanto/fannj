@@ -25,7 +25,6 @@ import com.sun.jna.NativeLibrary;
 import com.sun.jna.Platform;
 import com.sun.jna.Pointer;
 import com.sun.jna.win32.StdCallLibrary;
-import java.util.HashMap;
 import java.util.Map;
 
 /**

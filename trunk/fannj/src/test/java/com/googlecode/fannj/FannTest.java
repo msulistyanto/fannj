@@ -19,12 +19,7 @@ package com.googlecode.fannj;
 
 import java.io.IOException;
 import static org.junit.Assert.*;
-
-import java.net.URL;
-
 import org.junit.Test;
-
-import com.googlecode.fannj.Fann;
 import java.io.File;
 import java.io.FileOutputStream;
 import org.apache.commons.io.IOUtils;
