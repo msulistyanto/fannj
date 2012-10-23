@@ -65,8 +65,8 @@ See: http://stackoverflow.com/questions/4805382/problem-in-accessing-dll-file-fr
 
 
 ==!UnsatisfiedLinkError==
-Exception in thread "main" java.lang.UnsatisfiedLinkError: [ddl path]: Can't load IA 32-bit .dll on a AMD 64-bit platform
-then you are probably running a 64bit Java SDK while fannfloat.dll is 32bit. 
+Exception in thread "main" java.lang.!UnsatisfiedLinkError: (ddl path): Can't load IA 32-bit .dll on a AMD 64-bit platform. 
+Yu are probably running a 64bit Java SDK while fannfloat.dll is 32bit. 
 
 Solution: Install additional 32bit Java SDK and choose it in the build path for the project.
 
