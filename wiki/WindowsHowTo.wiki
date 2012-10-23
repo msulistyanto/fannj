@@ -40,7 +40,7 @@ Using the latest version of the FannJ jar in your Java project, open the ANN fil
 = Solutions To Problems =
 
 ==No Java Native ==
-"Exception in thread "main" java.lang.NoClassDefFoundError: com/sun/jna/Platform"
+"Exception in thread "main" java.lang.!NoClassDefFoundError: com/sun/jna/Platform"
 
 Solution: Download the JNA and add the jar to your project.
 
@@ -48,7 +48,7 @@ See: http://stackoverflow.com/questions/1773720/how-do-i-compile-and-run-this-ja
 
 
 ==Can' find the FANN library==
-Exception in thread "main" java.lang.UnsatisfiedLinkError: Unable to load library 'fannfloat': The specified module could not be found.
+Exception in thread "main" java.lang.!UnsatisfiedLinkError: Unable to load library 'fannfloat': The specified module could not be found.
 
 Solution: Add the following code after you set the JNA library path, run it:
 
