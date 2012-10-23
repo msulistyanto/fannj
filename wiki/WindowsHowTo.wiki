@@ -64,7 +64,7 @@ You can fix the problems if something is wrong with the first two messages easil
 See: http://stackoverflow.com/questions/4805382/problem-in-accessing-dll-file-from-a-java-program-through-jna 
 
 
-==UnsatisfiedLinkError==
+==!UnsatisfiedLinkError==
 Exception in thread "main" java.lang.UnsatisfiedLinkError: [ddl path]: Can't load IA 32-bit .dll on a AMD 64-bit platform
 then you are probably running a 64bit Java SDK while fannfloat.dll is 32bit. 
 
@@ -77,4 +77,3 @@ See: http://stackoverflow.com/questions/1403788/java-lang-unsatisfiedlinkerror-n
 
 Thanks to:
 http://michalturek.blogspot.hk/2012/04/installing-fann-on-java-project-and.html
-
